@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "finsider": {
+      "command": "finsider",
+      "args": ["mcp", "serve"]
+    }
+  }
+}

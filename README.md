@@ -13,3 +13,5 @@ Latest stable links:
 - https://github.com/finsider-ai/releases/releases/latest/download/finsider-excel-agent.tgz
 
 Web app: https://app.finsider.ai · CLI: `brew install finsider-ai/tap/finsider`
+
+Finsider for Claude Code and Codex: [plugin setup](docs/plugin-setup.md).

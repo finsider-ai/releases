@@ -1,0 +1,37 @@
+{
+  "name": "finsider",
+  "version": "0.1.0",
+  "description": "Financial diligence with Finsider: inspect evidence, verify statements, and prepare reviewable reports.",
+  "author": {
+    "name": "Finsider",
+    "url": "https://finsider.ai"
+  },
+  "homepage": "https://finsider.ai",
+  "repository": "https://github.com/finsider-ai/releases",
+  "keywords": [
+    "finsider",
+    "financial-diligence",
+    "quality-of-earnings",
+    "cfo",
+    "verification"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Finsider",
+    "shortDescription": "Evidence-backed financial diligence",
+    "longDescription": "Connect your Finsider account to assess an engagement, inspect financial statements and verification findings, ask Fin, and prepare diligence reports. Financial values come from Finsider calculations; each change requires approval and conclusions remain subject to professional review.",
+    "developerName": "Finsider",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://finsider.ai",
+    "defaultPrompt": [
+      "Assess diligence readiness for my Finsider workspace.",
+      "Explain the verification findings for my selected period.",
+      "Prepare a verified diligence report for professional review."
+    ]
+  }
+}
