@@ -67,39 +67,31 @@ If sign-in expires, run `finsider auth login` again. Keep the CLI installed on t
 Claude Desktop starts the same `finsider mcp serve` bridge from its config file. It doesn't read your terminal's PATH, so the config needs the full path to the Finsider CLI.
 
 1. Install the CLI and sign in as described in [Sign in first](#sign-in-first).
-2. On macOS or Linux, run this in your terminal and copy the path it prints.
+2. Find the two paths Claude Desktop needs, first the Node executable and then the Finsider CLI entry point. It needs both, because the `finsider` command starts Node through your PATH, which Claude Desktop doesn't have.
+
+   On macOS or Linux, run these two lines in your terminal and copy each path it prints.
 
    ```bash
-   command -v finsider
+   command -v node
+   node -p "require('fs').realpathSync(process.argv[1])" "$(command -v finsider)"
    ```
 
-   On Windows, run `finsider.cmd mcp config claude` in PowerShell. After the `--` in the command it prints come two single-quoted paths, first the Node executable and then the Finsider CLI entry point. Copy both without the quotes.
+   On Windows, run `finsider.cmd mcp config claude` in PowerShell. After the `--` in the command it prints come the same two paths in single quotes. Copy both without the quotes.
 3. Open Claude Desktop and click **Settings**, then **Developer**, then **Edit Config**. This opens `claude_desktop_config.json`, which lives at `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS and `%APPDATA%\Claude\claude_desktop_config.json` on Windows.
-4. Paste this into the file on macOS or Linux, replacing the path with the one you copied in step 2.
+4. Paste this into the file, replacing the Node path with the first path you copied and the entry point with the second.
 
    ```json
    {
      "mcpServers": {
        "finsider": {
-         "command": "/opt/homebrew/bin/finsider",
-         "args": ["mcp", "serve"]
+         "command": "/path/to/node",
+         "args": ["/path/to/finsider/dist/bin.js", "mcp", "serve"]
        }
      }
    }
    ```
 
-   On Windows, use the Node path as `command` and put the CLI entry point first in `args`. Double every backslash, because JSON treats a single backslash as an escape.
-
-   ```json
-   {
-     "mcpServers": {
-       "finsider": {
-         "command": "C:\\Program Files\\nodejs\\node.exe",
-         "args": ["C:\\Users\\you\\AppData\\Roaming\\npm\\node_modules\\finsider\\dist\\bin.js", "mcp", "serve"]
-       }
-     }
-   }
-   ```
+   On Windows, double every backslash in both paths, because JSON treats a single backslash as an escape.
 
    If the file already has an `mcpServers` block, add the `finsider` entry inside it instead of pasting a second block.
 5. Save the file, quit Claude Desktop completely and open it again.
