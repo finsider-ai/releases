@@ -73,7 +73,7 @@ Claude Desktop starts the same `finsider mcp serve` bridge from its config file.
    command -v finsider
    ```
 
-   On Windows, run `finsider.cmd mcp config claude` in PowerShell. The output starts with two quoted paths, the Node executable and the Finsider CLI entry point. Copy both.
+   On Windows, run `finsider.cmd mcp config claude` in PowerShell. After the `--` in the command it prints come two single-quoted paths, first the Node executable and then the Finsider CLI entry point. Copy both without the quotes.
 3. Open Claude Desktop and click **Settings**, then **Developer**, then **Edit Config**. This opens `claude_desktop_config.json`, which lives at `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS and `%APPDATA%\Claude\claude_desktop_config.json` on Windows.
 4. Paste this into the file on macOS or Linux, replacing the path with the one you copied in step 2.
 
