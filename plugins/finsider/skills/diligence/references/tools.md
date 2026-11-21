@@ -12,7 +12,7 @@ evidence; write and destructive tools prepare a confirmation before execution.
 | `get_workspace_context` | read | Establish workspace context before analysis. |
 | `assess_engagement` | read | Assess deterministic readiness and blocking evidence. |
 | `ask_fin` | read | Use reportingContext with startDate/endDate and basis reported, adjustments_only, or adjusted; reuse continuationHandle for follow-ups. Recommendations remain review-only. |
-| `get_pnl` | read | Dates use startDate/endDate; adjustToggle 1 is reported/original and 3 is adjusted (0 is a legacy original alias). |
+| `get_pnl` | read | Dates use startDate/endDate. Pass `layer` as `original` or `adjusted`. `adjustToggle` still works as a deprecated alias, 1 original and 3 adjusted, so use `layer` in new calls. |
 | `get_financial_schedule` | read | Read cash_flow, working_capital, trial_balance, proof_of_cash, accounts_receivable, accounts_payable, accounting_transactions, bank_transactions, adjustments, or chart_of_accounts. Only the first three support adjusted basis. Other schedules require original and return native/null provenance except original accounting_transactions. chart_of_accounts has no period filter. Use page/pageSize and follow pagination.nextPage without changing scope. |
 | `get_balance_sheet` | read | endDate selects the as-of date. Use original_transactions or adjusted_transactions explicitly. |
 | `get_data_connection_status` | read | Inspect source connection readiness. |

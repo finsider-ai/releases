@@ -14,4 +14,4 @@ Latest stable links:
 
 Web app: https://app.finsider.ai · CLI: `brew install finsider-ai/tap/finsider`
 
-Finsider for Claude Code and Codex: [plugin setup](docs/plugin-setup.md).
+Finsider for Claude Code, Codex, Claude Desktop, Claude Cowork, ChatGPT and Grok, plus Finsider Drop: [setup guide](docs/plugin-setup.md).
