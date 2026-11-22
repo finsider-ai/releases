@@ -29,7 +29,7 @@ evidence; write and destructive tools prepare a confirmation before execution.
 | `get_report_status` | read | Follow reportHandle; ready is required before retrieving the download. |
 | `get_report_download` | read | Request a private, short-lived download URL for a ready report. |
 | `generate_qoe_memo` | read | Compatibility summary with an exact-period verification gate. |
-| `list_adjustment_candidates` | read | QoE adjustment candidates as the backend stores them, each with reviewStage recommended, proposed, accepted, rejected or not_quantified. Filter by reviewStage and optional dates, and page with page/pageSize. Accept or reject in Finsider. |
+| `list_adjustment_candidates` | read | QoE adjustment candidates as the backend stores them, each with reviewStage recommended, proposed, accepted, rejected or not_quantified. Filter by reviewStage and optional dates, and page with page/pageSize. Decide one with decide_adjustment. |
 | `list_data_room_documents` | read | Documents in the workspace data room as the backend lists them. |
 | `get_deal_inputs` | read | The saved deal scenario assumptions as stored. Do not recompute outputs. |
 | `get_valuation_scenarios` | read | Saved valuation scenarios and their backend outputs as stored. |
@@ -45,6 +45,8 @@ evidence; write and destructive tools prepare a confirmation before execution.
 | `review_discrepancy` | write | Record keep/remove for one findingKey; use the real reviewer's identity. |
 | `request_fdd_datapack` | write | Prepare a data pack; use explicit paired dates for a scoped engagement. |
 | `request_diligence_report` | write | Prepare the report for startDate/endDate after verification. |
+| `decide_adjustment` | write | Approve or reject one candidateId from list_adjustment_candidates, with an optional reason recorded as the rationale. The preview names the candidate's label, amount and period as the backend stores them. A needed offsetting account or a possible duplicate comes back as a refusal with the Finsider link, so send the reviewer there and never retry with guessed values. Finsider can reopen a decision by reverting it to Recommended. |
+| `create_data_request` | write | Create a seller data request link, emailed to recipientEmail when given. The link appears once, in the confirmed result as dataRequest.url. It is a bearer credential, so share it only with the intended seller and never post it elsewhere. get_operation_status returns only a datarequest_ handle. |
 | `confirm_financial_upload` | destructive | Insert uploaded rows, including warned rows, after specific approval. |
 | `cancel_financial_upload` | destructive | Cancel the selected upload job. |
 | `remove_all_discrepancies` | destructive | Bulk removal requires the exact requiredPhrase as confirmation_phrase. |
