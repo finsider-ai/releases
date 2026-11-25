@@ -113,6 +113,19 @@ Request a fresh verification run, through this same approval flow, when prior
 evidence is stale. Do not mark findings resolved merely because a write returned
 success.
 
+Decide an adjustment with `decide_adjustment` only after the user picks approve
+or reject for a specific candidate from `list_adjustment_candidates`. Show the
+preview's label, amount and period as returned. If the result says Finsider
+needs an offsetting account or flags a possible duplicate, give the user the
+`open_in_finsider` link so the reviewer finishes it there, and never retry with
+a guessed account, amount or confirmation.
+
+Send a seller data request with `create_data_request` when the evidence shows
+missing documents. The confirmed result returns the link once as
+`dataRequest.url`. It works as a credential for whoever holds it, so give it
+only to the user for the intended seller, keep it out of documents and shared
+channels, and do not prepare another request just to see the link again.
+
 For uploads, the MCP tools prepare and finalize scoped upload URLs; they do not
 transfer local file bytes. Use a host upload capability only when it can send
 the actual supplied file safely to the returned destination, with matching
