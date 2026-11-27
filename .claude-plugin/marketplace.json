@@ -11,8 +11,13 @@
     {
       "name": "finsider",
       "source": "./plugins/finsider",
-      "description": "Evidence-backed financial diligence through your Finsider account.",
-      "category": "productivity"
+      "description": "Financial due diligence with Finsider: agents work diligence Actions like tickets.",
+      "category": "finance",
+      "displayName": "Finsider",
+      "tags": [
+        "finance",
+        "diligence"
+      ]
     }
   ]
 }

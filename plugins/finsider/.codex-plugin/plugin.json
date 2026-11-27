@@ -1,7 +1,7 @@
 {
   "name": "finsider",
   "version": "0.2.0",
-  "description": "Financial diligence worked like software: Claude, Codex and Cursor pick up Finsider Actions, work them with Finsider's verified tools and report on the Actions board.",
+  "description": "Financial due diligence worked like software: your agent picks up Finsider Actions, works them with Finsider's verified financial tools and reports live on the Actions board.",
   "author": {
     "name": "Finsider",
     "url": "https://finsider.ai"
@@ -9,23 +9,25 @@
   "homepage": "https://finsider.ai",
   "repository": "https://github.com/finsider-ai/releases",
   "keywords": [
-    "actions",
-    "agents",
-    "cfo",
+    "finance",
     "financial-diligence",
-    "finsider",
     "quality-of-earnings",
-    "verification"
+    "due-diligence",
+    "accounting",
+    "finsider",
+    "actions",
+    "agents"
   ],
   "skills": "./skills/",
   "mcpServers": "./mcp.json",
   "interface": {
     "displayName": "Finsider",
-    "shortDescription": "Work diligence Actions like tickets",
-    "longDescription": "Connect your Finsider account, pick up Actions (the steps of a diligence engagement) and work them with Finsider's tools while your session shows live on the Actions board. Financial values come from Finsider calculations; every change needs approval and the team moves finished work to Done.",
+    "shortDescription": "Financial due diligence",
+    "longDescription": "Finsider runs financial due diligence the way software is built. Every engagement (quality of earnings, net working capital, proof of cash) is a board of Actions, and your agent picks them up like tickets: it reads the Action, works it with Finsider's verified tools for statements, schedules, reconciliations and verification, and its session shows live on the Finsider Actions board until the team reviews the work and moves it to Done. Figures always come from Finsider's own calculations, every change is previewed and needs your approval, and conclusions stay subject to professional review.",
     "developerName": "Finsider",
-    "category": "Productivity",
+    "category": "Finance",
     "capabilities": [
+      "Interactive",
       "Read",
       "Write"
     ],
@@ -33,7 +35,21 @@
     "defaultPrompt": [
       "Work the next open Finsider Action on my company.",
       "What is left on my Finsider engagement?",
-      "Assess diligence readiness for my Finsider workspace."
+      "Assess diligence readiness for my Finsider company."
+    ],
+    "supportURL": "https://finsider.ai/contact",
+    "privacyPolicyURL": "https://finsider.ai/legal/privacy",
+    "termsOfServiceURL": "https://finsider.ai/legal/terms",
+    "brandColor": "#113359",
+    "brandColorDark": "#1F5FD1",
+    "composerIcon": "./assets/composer-icon.png",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo-dark.png",
+    "screenshots": [
+      "./assets/screenshot-1.png",
+      "./assets/screenshot-2.png",
+      "./assets/screenshot-3.png"
     ]
-  }
+  },
+  "license": "MIT"
 }

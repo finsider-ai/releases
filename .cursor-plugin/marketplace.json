@@ -7,9 +7,13 @@
   "plugins": [
     {
       "name": "finsider",
-      "source": "./plugins/finsider",
+      "source": "plugins/finsider",
       "description": "Work Finsider diligence Actions with your agent.",
-      "category": "productivity"
+      "category": "integrations",
+      "logo": "plugins/finsider/assets/logo.svg"
     }
-  ]
+  ],
+  "metadata": {
+    "description": "Finsider plugins for Cursor"
+  }
 }
