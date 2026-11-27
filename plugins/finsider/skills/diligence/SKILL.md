@@ -120,9 +120,7 @@ size and SHA-256. Otherwise hand the user to Finsider's upload flow. Read
 validation warnings before preparing `confirm_financial_upload`.
 
 Prefer reviewing a specific discrepancy with evidence. Bulk removal requires
-its own explicit request, preview, and exact workspace-name phrase. For
-`reconcile_deletions`, inspect the current reconciliation summary first; the
-compatibility MCP surface does not implement a dry-run call with `apply: false`.
+its own explicit request, preview, and exact workspace-name phrase.
 
 ## Gate reporting and professional review
 

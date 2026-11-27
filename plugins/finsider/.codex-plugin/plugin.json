@@ -1,7 +1,7 @@
 {
   "name": "finsider",
-  "version": "0.1.0",
-  "description": "Financial diligence with Finsider: inspect evidence, verify statements, and prepare reviewable reports.",
+  "version": "0.2.0",
+  "description": "Financial diligence worked like software: Claude, Codex and Cursor pick up Finsider Actions, work them with Finsider's verified tools and report on the Actions board.",
   "author": {
     "name": "Finsider",
     "url": "https://finsider.ai"
@@ -9,18 +9,20 @@
   "homepage": "https://finsider.ai",
   "repository": "https://github.com/finsider-ai/releases",
   "keywords": [
-    "finsider",
-    "financial-diligence",
-    "quality-of-earnings",
+    "actions",
+    "agents",
     "cfo",
+    "financial-diligence",
+    "finsider",
+    "quality-of-earnings",
     "verification"
   ],
   "skills": "./skills/",
-  "mcpServers": "./.mcp.json",
+  "mcpServers": "./mcp.json",
   "interface": {
     "displayName": "Finsider",
-    "shortDescription": "Evidence-backed financial diligence",
-    "longDescription": "Connect your Finsider account to assess an engagement, inspect financial statements and verification findings, ask Fin, and prepare diligence reports. Financial values come from Finsider calculations; each change requires approval and conclusions remain subject to professional review.",
+    "shortDescription": "Work diligence Actions like tickets",
+    "longDescription": "Connect your Finsider account, pick up Actions (the steps of a diligence engagement) and work them with Finsider's tools while your session shows live on the Actions board. Financial values come from Finsider calculations; every change needs approval and the team moves finished work to Done.",
     "developerName": "Finsider",
     "category": "Productivity",
     "capabilities": [
@@ -29,9 +31,9 @@
     ],
     "websiteURL": "https://finsider.ai",
     "defaultPrompt": [
-      "Assess diligence readiness for my Finsider workspace.",
-      "Explain the verification findings for my selected period.",
-      "Prepare a verified diligence report for professional review."
+      "Work the next open Finsider Action on my company.",
+      "What is left on my Finsider engagement?",
+      "Assess diligence readiness for my Finsider workspace."
     ]
   }
 }

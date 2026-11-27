@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "finsider": {
+      "type": "streamable-http",
+      "url": "https://agents.finsider.ai/mcp"
+    }
+  }
+}

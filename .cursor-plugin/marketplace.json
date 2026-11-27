@@ -1,0 +1,15 @@
+{
+  "name": "finsider",
+  "owner": {
+    "name": "Finsider",
+    "url": "https://finsider.ai"
+  },
+  "plugins": [
+    {
+      "name": "finsider",
+      "source": "./plugins/finsider",
+      "description": "Work Finsider diligence Actions with your agent.",
+      "category": "productivity"
+    }
+  ]
+}
