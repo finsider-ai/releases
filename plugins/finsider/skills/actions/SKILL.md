@@ -21,8 +21,13 @@ itself; this skill is the ticket workflow around it.
 2. `list_actions` for that company. Each engagement lists its steps with
    `stepId`, `label`, `stage`, `owner`, `dueDate` and `done`.
 3. Take the Action the user named. If they did not name one, propose the first
-   open step that is not owned by someone else and is not a review or sign-off
-   step, and confirm it in one line before starting.
+   open step that is not owned by someone else, is not a review or sign-off
+   step, that Fin is not already working (`fin.status` is `running` or
+   `pending`) and that has no `activeSessions` from another agent, and confirm
+   it in one line before starting.
+4. Fin is Finsider's own agent and works the same board. When Fin has a step
+   (`fin` is set), build on its work instead of redoing it; when Fin is waiting
+   on a person (`needs_input`), you may help that person answer.
 
 ## 2. Start your session on the board
 
@@ -67,3 +72,13 @@ still needs professional judgement. If you could not complete it, use
 Never claim the Action is done. Finishing your session does not tick the step:
 the team reviews your work and moves the Action to Done on the board. Never
 work review or sign-off steps on a person's behalf.
+
+## Running as a loop
+
+The same workflow runs unattended (a scheduled routine, a CI job or a harness
+iteration): each pass lists Actions, takes the next eligible step, starts its
+session, works it, and ends the session as finished, failed or needs input.
+Never take a step another session or Fin is already working, never approve a
+prepared write on the person's behalf (leave the session at `needs_input` with
+the exact preview instead), and stop after one Action per pass so the team
+reviews work at the pace it lands.
