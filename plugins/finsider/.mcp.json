@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "finsider": {
-      "command": "finsider",
-      "args": ["mcp", "serve"]
+      "type": "http",
+      "url": "https://agents.finsider.ai/mcp"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "finsider",
-  "version": "0.1.0",
-  "description": "Financial diligence with Finsider: inspect evidence, verify statements, and prepare reviewable reports.",
+  "version": "0.2.0",
+  "description": "Financial due diligence worked like software: your agent picks up Finsider Actions, works them with Finsider's verified financial tools and reports live on the Actions board.",
   "author": {
     "name": "Finsider",
     "url": "https://finsider.ai"
@@ -9,12 +9,23 @@
   "homepage": "https://finsider.ai",
   "repository": "https://github.com/finsider-ai/releases",
   "keywords": [
-    "finsider",
+    "finance",
     "financial-diligence",
     "quality-of-earnings",
-    "cfo",
-    "verification"
+    "due-diligence",
+    "accounting",
+    "finsider",
+    "actions",
+    "agents"
   ],
   "skills": "./skills/",
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.mcp.json",
+  "commands": "./commands/",
+  "displayName": "Finsider",
+  "license": "MIT",
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://app.finsider.ai/docs/agents",
+  "supportUrl": "https://finsider.ai/contact",
+  "privacyPolicyUrl": "https://finsider.ai/legal/privacy",
+  "termsOfServiceUrl": "https://finsider.ai/legal/terms"
 }

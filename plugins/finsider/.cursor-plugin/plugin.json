@@ -1,0 +1,33 @@
+{
+  "name": "finsider",
+  "version": "0.2.0",
+  "description": "Financial due diligence worked like software: your agent picks up Finsider Actions, works them with Finsider's verified financial tools and reports live on the Actions board.",
+  "author": {
+    "name": "Finsider",
+    "url": "https://finsider.ai"
+  },
+  "homepage": "https://finsider.ai",
+  "repository": "https://github.com/finsider-ai/releases",
+  "keywords": [
+    "finance",
+    "financial-diligence",
+    "quality-of-earnings",
+    "due-diligence",
+    "accounting",
+    "finsider",
+    "actions",
+    "agents"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json",
+  "displayName": "Finsider",
+  "commands": "./commands/",
+  "license": "MIT",
+  "logo": "assets/logo.svg",
+  "category": "integrations",
+  "tags": [
+    "finance",
+    "diligence",
+    "mcp"
+  ]
+}

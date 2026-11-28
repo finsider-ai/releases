@@ -1,63 +1,64 @@
-# Finsider for Claude Code and Codex
+# Finsider for Claude, Codex and Cursor
 
-The Finsider plugin adds financial diligence tools and the bundled diligence workflow to your local AI client. Your Finsider account determines which companies and workspaces you can access.
+The Finsider plugin lets your agent work Finsider Actions the way an engineer
+works tickets: it picks up an Action (a step of a diligence engagement), works
+it with Finsider's verified tools, and its session shows live on the Finsider
+Actions board (Working, Needs input, Finished) under that task. Your team
+reviews the work and moves it to Done.
 
-## Sign in first
+Your Finsider account decides which companies the agent can see. Each agent
+signs in to Finsider in your browser the first time (OAuth); no CLI, key or
+password is stored in the plugin.
 
-Install Finsider CLI 1.1.0 or newer using the [CLI setup instructions](https://home.finsider.ai/agents). Then run:
+## One click, from Finsider
+
+Open **Actions** in Finsider and choose **Connect agents**:
+
+- **Add to Claude** opens Claude's Add connector dialog with Finsider filled in
+  (Claude on the web, desktop and mobile). Confirm and sign in.
+- **Add to Cursor** opens Cursor with Finsider ready to install. Confirm and sign in.
+- **Install in Codex** installs the plugin once Codex knows this marketplace
+  (see below).
+
+Then open any task and choose **Send to Claude**, **Codex** or **Cursor**: the
+agent opens with the work already written as its prompt.
+
+## Claude Code
 
 ```bash
-finsider --version
-finsider auth login
+claude plugin install finsider --marketplace finsider-ai/releases
 ```
 
-Complete sign-in in your browser. The plugin starts `finsider mcp serve` automatically using that signed-in account; you do not need to run the bridge yourself.
+(Older Claude Code: `claude plugin marketplace add finsider-ai/releases`, then
+`claude plugin install finsider@finsider --scope user`.) Start a new session and
+run `/mcp` to sign in to Finsider. `/finsider:work Harbor Dental` starts work.
 
-## Claude Code on macOS or Linux
-
-Run these commands in your terminal:
-
-```bash
-claude plugin marketplace add finsider-ai/releases
-claude plugin install finsider@finsider --scope user
-```
-
-Start a new Claude Code session. Use `/mcp` to check the Finsider connection.
-
-## Codex on macOS or Linux
-
-Run these commands in your terminal:
+## Codex
 
 ```bash
 codex plugin marketplace add finsider-ai/releases
 codex plugin add finsider@finsider
 ```
 
-Start a new Codex session and confirm Finsider appears in the available tools.
+Codex asks you to sign in to Finsider when the plugin installs. After the
+marketplace is added once, **Install in Codex** in Finsider installs updates in
+one click.
 
-These commands use the public Finsider marketplace in this repository. Access to a private Finsider source repository is unnecessary. See the official [Claude Code plugin guide](https://code.claude.com/docs/en/discover-plugins) and [Codex plugin documentation](https://developers.openai.com/plugins/build/plugins) for host settings and workspace policies.
+## Cursor
 
-## Windows PowerShell
+Use **Add to Cursor** in Finsider, or add this marketplace in Cursor's plugin
+settings. Cursor signs in to Finsider in the browser.
 
-Use the CLI-generated connection command for your AI client. Automatic marketplace MCP startup on Windows is still being verified.
+## What the agent can and cannot do
 
-```powershell
-finsider.cmd auth login
-# Choose the client you use:
-finsider.cmd mcp config codex
-finsider.cmd mcp config claude
-```
+The agent reads Actions, puts its own session on the board and reports
+progress. Every Finsider change it prepares (an upload, a sync, a verification
+run, a report) shows you its exact preview and waits for your approval.
+Finishing a session never ticks a task: your team moves it to Done.
 
-Copy and run the setup command printed for your chosen client once in PowerShell, then start a new client session. The generated command uses the correct executable paths for your Windows installation. Keep this standalone connection separate from the marketplace plugin so a second Finsider MCP server is not enabled. The [diligence workflow](../plugins/finsider/skills/diligence/SKILL.md) is available as a reference alongside the connection.
+## Without remote sign-in
 
-## Use Finsider
-
-Ask: “Use Finsider to assess diligence readiness for my selected company and period.” Finsider gathers evidence before proposing changes. Review each proposed mutation and its exact preview before approving it.
-
-If sign-in expires, run `finsider auth login` again. Keep the CLI installed on the same computer as your AI client. If you already configured a standalone Finsider MCP connection, use one connection method to avoid duplicate servers.
-
-## ChatGPT and Claude web
-
-Remote web connection availability is pending. Those clients require additional Finsider-provided OAuth setup and compatibility checks; installing this local plugin does not enable a remote web connector.
-
-The hosted MCP endpoint is `https://agents.finsider.ai/mcp`. See [custom connection setup](https://home.finsider.ai/agents) for current availability.
+Hosts that cannot sign in remotely can use the Finsider CLI bridge: install the
+CLI from [home.finsider.ai/agents](https://home.finsider.ai/agents), run
+`finsider auth login`, then `finsider mcp config codex` or
+`finsider mcp config claude` and run the printed command.
